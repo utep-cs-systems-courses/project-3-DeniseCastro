@@ -8,9 +8,10 @@ void main(){
   configureClocks();
   lcd_init();
   switch_init(15);
+  buzzer_init();
   or_sr(0x8);
 
-  //u_char width = screenWidth, height = screenHeigh;
+  //u_char width = screenWidth, height = screenHeight;
 
   clearScreen(COLOR_BLACK);
 

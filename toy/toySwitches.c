@@ -5,7 +5,7 @@
 static unsigned char switch_mask;
 static unsigned char switches_current;
 
-void switch_init(usigned char mask){
+void switch_init(unsigned char mask){
   switch_mask = mask;
   P2REN |= mask;
   P2IE = mask;
@@ -15,10 +15,10 @@ void switch_init(usigned char mask){
   switch_update_interrupt_sense();
 }
 
-switch_read(){
-  unsigned int sw_changed = switches_current^ switches_last_reported;
-  switches_last_reportedd = switches_current;
-  return switches_current | (switch_satate_changed << 8);
+unsigned int switch_read(){
+  unsigned int sw_changed = switches_current^ switch_down;
+  switch_down = switches_current;
+  return switches_current | (sw_changed << 8);
 }
 
 static void switch_update_interrupt_sense(){
@@ -29,7 +29,7 @@ static void switch_update_interrupt_sense(){
 
 //buzzer initializer
 void buzzer_init(){
-  timperAUpmode();
+  timerAUpmode();
   P2SEL2 &= ~(BIT6 | BIT7);
   P2SEL &=  ~BIT7;
   P2SEL |= BIT6;
