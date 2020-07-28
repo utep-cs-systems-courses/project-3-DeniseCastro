@@ -16,10 +16,7 @@ void buzzer_init();
 void buzzer_off();
 void buzzer_set_period(short cycles);
 
-extern char switch_one_state;
-extern char switch_two_state;
-extern char switch_three_state;
-extern char switch_four_state;
+
 extern char switches_change;
 int switch_down;
 
