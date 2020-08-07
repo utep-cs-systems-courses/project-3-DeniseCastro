@@ -88,6 +88,7 @@ void stateMachine(int pressed){
     key[pressed] = (key[4] == 4)? 3: 0;
     green_light(0);
     led_update();
+    fillRectangle(0,16,screenWidth, screenHeight,COLOR_BLACK);
     break;
   case 4:
     note = 5919.91;;  // NOTE F#

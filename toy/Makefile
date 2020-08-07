@@ -9,7 +9,7 @@ CC              = msp430-elf-gcc
 AS              = msp430-elf-as
 AR              = msp430-elf-ar
 
-toyMain.elf: toyMain.o toySwitches.o toyState.o
+toyMain.elf: toyMain.o toySwitches.o toyState.o lcddraw.o stateSet.o
 	$(CC) $(CFLAGS) ${LDFLAGS} -o $@ $^ -lLcd -lp2sw -lTimer
 
 clean:

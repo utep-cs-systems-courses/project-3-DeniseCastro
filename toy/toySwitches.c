@@ -93,7 +93,7 @@ void red_light(char ledBool){
 int redraw(int screen){
   while(!redraw){
     P1OUT &= ~LED_RED;
-    or_sr(0x10);
+    or_sr(0x10);   
   }
   P1OUT |= LED_RED;
   return 0;
@@ -118,3 +118,13 @@ void __interrupt_vec(WDT_VECTOR) WDT(){
      count =0;
     }
 }
+
+/*
+int stateSet(int switches){
+if(!(switches & 1)  ) switches =1;
+    else if(!(switches & 2)) switches =2;
+    else if(!(switches & 4)) switches = 3;
+    else if(!(switches & 8)) switches =4;
+ return switches;
+
+ }*/
