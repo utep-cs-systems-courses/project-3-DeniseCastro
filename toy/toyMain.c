@@ -3,6 +3,7 @@
 #include "lcddraw.h"
 #include "toySwitches.h"
 #include "toyState.h"
+#include "stateSet.h"
 
 int screen = 1;
 
@@ -26,11 +27,7 @@ void main(){
 
   int stateNum = 0;
   
-    if(!(switches & 1)  ) stateNum =1;
-    else if(!(switches & 2)) stateNum =2;
-    else if(!(switches & 4)) stateNum = 3;
-    else if(!(switches & 8)) stateNum=4;
-    
+  stateNum = stateSet(switches);
     stateMachine(stateNum);
   screen = redraw(screen);
      }
