@@ -80,7 +80,7 @@ void stateMachine(int pressed){
     str = "FLOWER ";
     key[pressed] = (key[0] ==0)? 2: 0;
     roses(25, COLOR_WHITE);
-    
+    roses(25, COLOR_RED);
     break;
   case 3:
     note = 4978.03;  // NOTE D#
@@ -92,12 +92,12 @@ void stateMachine(int pressed){
   case 4:
     note = 5919.91;;  // NOTE F#
     str = "KEY: start w/ 2";
-    key[pressed] = (key[2] == 2) ? 4: 0; 
+    key[pressed] = (key[2] == 2) ? 4: 0;
+    roses(25,COLOR_PINK);
     break;
   default: buzzer_off();
     str = "                         ";
-    
-    fillRectangle(0,16,screenWidth, screenHeight,COLOR_BLACK);
+  fillRectangle(0,16,screenWidth, screenHeight,COLOR_BLACK);
     break;
   }
 
